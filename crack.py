@@ -56,7 +56,20 @@ def find_prime_factors(n):
 	return p, q
 
 
-if __name__ == '__main__':
+def main():
 	modulus = int(input("Enter modulus (decimal):\n"))
-	exponent = int(input("Enter exponent (decimal):\n"))
+	exponent = input("Enter exponent (decimal, default 65537):\n")
+	if exponent == "":
+		exponent = 65537
+	else:
+		exponent = int(exponent)
+		print()
+	
+	beginning = time.time()
 	start(modulus, exponent)
+	end = time.time()
+	print("Time taken:\t{}s".format(round(end - beginning, 2)))
+
+
+if __name__ == '__main__':
+	main()
