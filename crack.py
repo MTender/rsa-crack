@@ -39,6 +39,9 @@ def start(n, e):
 	print("Second prime (q):\t{}".format(q))
 	
 	phi = (p - 1) * (q - 1)
+	if phi == 0:
+		raise Exception("Modulus cannot be prime".format(n))
+	
 	d = pow(e, -1, phi)
 	print("\nPrivate key (d):\t{}".format(d))
 	
